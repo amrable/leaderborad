@@ -19,7 +19,31 @@
         <input type="" class="form-control" name="third" aria-describedby="" placeholder="Enter third place name">
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+  
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        Reset
+    </button>
   </form>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Remove scores?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <form action="/reset" method="post">
+                <button type="submit" class="btn btn-primary">Remove</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <h1>Standings 🥇</h1>
   <table class="table table-striped">
@@ -43,4 +67,7 @@
         <% } %>
     </tbody>
   </table>
+
+
+  
 <%- include("partials/footer"); -%>

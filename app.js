@@ -22,6 +22,13 @@ app.get("/", function(req, res) {
 });
 
 
+app.post("/reset", function(req, res) {
+    standing = []
+    leaderborad = {}
+    res.redirect('/');
+
+});
+
 app.post("/", function(req, res) {
     
     var first = req.body.first;
@@ -59,6 +66,6 @@ app.post("/", function(req, res) {
 
 
 
-app.listen(process.env.PORT || 8080, function() {
-    console.log("Server started on port 8080");
+app.listen(process.env.PORT || 2020, function() {
+    console.log("Server started on port 2020");
 });
