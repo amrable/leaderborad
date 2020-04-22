@@ -1,0 +1,46 @@
+<%- include("partials/header"); -%>
+
+  <h1> Leaderborad 🎉</h1>
+
+
+  <form action="/" method="post">
+    <div class="form-group">
+      <label for="">First Place</label>
+      <input type="" class="form-control" name="first" aria-describedby="" placeholder="Enter first place name">
+    </div>
+
+    <div class="form-group">
+        <label for="">Second Place</label>
+        <input type="" class="form-control" name="second" aria-describedby="" placeholder="Enter second place name">
+      </div>
+
+    <div class="form-group">
+        <label for="">Third Place</label>
+        <input type="" class="form-control" name="third" aria-describedby="" placeholder="Enter third place name">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <h1>Standings 🥇</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(var i = 0 ; i < board.length ; i++){ %>
+            <tr <%if(i==0){%>class="bg-success" <% }%>
+                <%if(i==1){%>class="bg-warning" <% }%>
+                <%if(i==2){%>class="bg-danger" <% }%>
+                >
+                <th scope="row"><%=i+1%></th>
+                <td><%= board[i][0]%></td>
+                <td><%= board[i][1]%></td>
+            </tr>
+        <% } %>
+    </tbody>
+  </table>
+<%- include("partials/footer"); -%>
